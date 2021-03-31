@@ -18,7 +18,7 @@ void *worker(void *param);
 
 int main(int argc, char **argv)
 {
-    int number_of_proc = 8;
+    int number_of_proc = 56;
 
     if(argc != 3){
         printf("ERROR: Please specify only 2 files.\n");

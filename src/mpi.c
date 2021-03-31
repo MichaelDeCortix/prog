@@ -72,12 +72,12 @@ int main(int argc, char *argv[]) {
     // отправляем параметры матрицы для вычисления
     MPI_Bcast(&matrix_properties, 4, MPI_INT, 0, MPI_COMM_WORLD);
 
-    // считаем одномерные матрицы
+    // считаем одномерные массивы
     int size_a   = matrix_properties[0] * matrix_properties[1];
     int size_b   = matrix_properties[2] * matrix_properties[3];
     int size_res = matrix_properties[0] * matrix_properties[3];
     
-    // выделяем память для одномерных матриц
+    // выделяем память для одномерных массивы
     if(rank == 0) {
         final_matrix = malloc( size_res * sizeof(double) );
     } else {
@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
         m_b = malloc( size_b * sizeof(double) );
     }
 
-    // отправляем одномерные матрицы для вычисления
+    // отправляем одномерные массивы для вычисления
     MPI_Bcast(m_a, size_a , MPI_DOUBLE, 0, MPI_COMM_WORLD);
     MPI_Bcast(m_b, size_b , MPI_DOUBLE, 0, MPI_COMM_WORLD);
     

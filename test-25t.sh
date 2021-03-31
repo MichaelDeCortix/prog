@@ -41,16 +41,16 @@ echo "100x100 Matrix"
 cal_t=$((time bin/seq data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with sequential    $cal_t"
 
-cal_t=$((time bin/omp4 data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time bin/omp25 data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with omp           $cal_t"
 
-cal_t=$((time bin/thread4 data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time bin/thread25 data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with Phtreads      $cal_t"
 
-cal_t=$((time mpirun -np 4 bin/mpi data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time mpirun -np 25 bin/mpi data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with mpi           $cal_t"
 
-cal_t=$((time mpiexec -n 4 python3 src/mpip2.py 100 data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time mpiexec -n 25 python3 src/mpip2.py 100 data/mat_100x100.txt data/mat_100x100b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with mpi4p         $cal_t"
 echo
 
@@ -58,16 +58,16 @@ echo "1000x1000 Matrix"
 cal_t=$((time bin/seq data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with sequential    $cal_t"
 
-cal_t=$((time bin/omp4 data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time bin/omp25 data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with omp           $cal_t"
 
-cal_t=$((time bin/thread4 data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time bin/thread25 data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with Phtreads      $cal_t"
 
-cal_t=$((time mpirun -np 4 bin/mpi data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time mpirun -np 25 bin/mpi data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with mpi           $cal_t"
 
-cal_t=$((time mpiexec -n 4 python3 src/mpip2.py 1000 data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time mpiexec -n 25 python3 src/mpip2.py 1000 data/mat_1000x1000.txt data/mat_1000x1000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with mpi4p         $cal_t"
 echo
 
@@ -75,16 +75,16 @@ echo "2000x2000 Matrix"
 cal_t=$((time bin/seq data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with sequential    $cal_t"
 
-cal_t=$((time bin/omp4 data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time bin/omp25 data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with omp           $cal_t"
 
-cal_t=$((time bin/thread4 data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time bin/thread25 data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with Phtreads      $cal_t"
 
-cal_t=$((time mpirun -np 4 bin/mpi data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time mpirun -np 25 bin/mpi data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with mpi           $cal_t"
 
-cal_t=$((time mpiexec -n 4 python3 src/mpip2.py 2000 data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
+cal_t=$((time mpiexec -n 25 python3 src/mpip2.py 2000 data/mat_2000x2000a.txt data/mat_2000x2000b.txt)  2>&1 > /dev/null | grep real | awk '{print $2}')
 echo "with mpi4p         $cal_t"
 echo
 

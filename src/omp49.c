@@ -7,7 +7,7 @@
 
 int main(int argc, char **argv)
 {
-    omp_set_num_threads(8);
+    omp_set_num_threads(49);
 
     if(argc != 3){
         printf("ERROR: Please specify only 2 files.\n");
